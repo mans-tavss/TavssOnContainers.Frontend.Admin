@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-4">
+        <app-general-app></app-general-app>
+    </div>
+    <div class="col-8">
+        <form style="margin-right: 150px;" id="objects-details-form" #f="ngForm" (ngSubmit)='f.form.valid && onSubmit() ' [appMatchPassword]="['password', 'confirmPassword']" novalidate>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"> </div>
+                    <div class="admin-parts-title col-8 text-center animated bounceInLeft"> Course data </div>
+                    <div class="col-md-2"> </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2"> </div>
+                <div class="form-group col-md-8 ">
+                <label for="inputName">ID</label>
+                <input type="text" #id="ngModel" required name="id" class="form-control" id="id" [(ngModel)]="Course.id">
+                </div>
+                <span style="margin-left: 150px" class="text-danger"
+                    *ngIf="(id.touched || f.submitted) && id.errors?.required">
+                    ID is required
+                </span >
+            </div>
+            <div class="form-row">
+                    <div class="col-md-2"> </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputEmail4">Name</label>
+                        <input type="text" #name="ngModel" required name="name" class="form-control" id="name" [(ngModel)]="Course.name">
+                    </div>
+                    <div class="col-md-2"> </div>
+                    <span style="margin-left: 220px" class="text-danger"
+                        *ngIf="(name.touched || f.submitted) && name.errors?.required">
+                        Name is required
+                    </span>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2"> </div>
+                <div class="form-group col-md-8 ">
+                <label for="inputName">Doctor ID</label>
+                <input type="text" #drId="ngModel" required name="drId" class="form-control" id="drId" [(ngModel)]="Course.drId">
+                </div>
+                <span style="margin-left: 220px" class="text-danger"
+                    *ngIf="(drId.touched || f.submitted) && drId.errors?.required">
+                    Dotor ID is required
+                </span >
+            </div>
+            <div class="form-row">
+                <div class="col-md-2"> </div>
+                <div class="form-group col-md-8">
+                    <label for="inputEmail4">Doctor Name</label>
+                    <input type="text" #drName="ngModel" required name="drName" class="form-control" id="drName" [(ngModel)]="Course.drName">
+                </div>
+                <div class="col-md-2"> </div>
+                <span style="margin-left: 220px" class="text-danger"
+                    *ngIf="(drName.touched || f.submitted) && drName.errors?.required">
+                    Doctor Name is required
+                </span>
+            </div>
+            <div class="form-row">
+                    <div class="col">
+                        <button type='submit' style='width:700px; ' class="admin-details-button text-center">
+                            <a  class="primary-btn" data-text="Save">
+                                <span>S</span>
+                                <span>a</span>
+                                <span>v</span>
+                                <span>e</span>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+<div class="menu-wrapper">
+    <div class="mobile-menu">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Menu Example 01</a></li>
+                                <li><a href="#">Menu Example 02</a></li>
+                                <li><a href="#">Menu Example 03</a></li>
+                                <li><a href="#">Menu Example 04</a></li>
+                                <li><a href="#">Menu Example 05</a></li>
+                                <li><a href="#">Menu Example 06</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Menu Example 01</a></li>
+                                <li><a href="#">Menu Example 02</a></li>
+                                <li><a href="#">Menu Example 03</a></li>
+                                <li><a href="#">Menu Example 04</a></li>
+                                <li><a href="#">Menu Example 05</a></li>
+                                <li><a href="#">Menu Example 06</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Menu Example 01</a></li>
+                                <li><a href="#">Menu Example 02</a></li>
+                                <li><a href="#">Menu Example 03</a></li>
+                                <li><a href="#">Menu Example 04</a></li>
+                                <li><a href="#">Menu Example 05</a></li>
+                                <li><a href="#">Menu Example 06</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Menu Example 01</a></li>
+                                <li><a href="#">Menu Example 02</a></li>
+                                <li><a href="#">Menu Example 03</a></li>
+                                <li><a href="#">Menu Example 04</a></li>
+                                <li><a href="#">Menu Example 05</a></li>
+                                <li><a href="#">Menu Example 06</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Menu Example 01</a></li>
+                                <li><a href="#">Menu Example 02</a></li>
+                                <li><a href="#">Menu Example 03</a></li>
+                                <li><a href="#">Menu Example 04</a></li>
+                                <li><a href="#">Menu Example 05</a></li>
+                                <li><a href="#">Menu Example 06</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://html.design">Download <i class="fa fa-shopping-bag"></i></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+    </div><!-- end mobile-menu -->
+    <div class='parent'>
+        <header class="vertical-header">
+            <div class="vertical-header-wrapper">
+                <nav class="nav-menu">
+                    <div class="logo">
+                        <div id='img'><img style='width: 80%;' src={{localpath}}></div>
+                    </div><!-- end logo -->
+      
+                    <div class="margin-block"></div>
+      
+                    <ul class="primary-menu">
+                        <li class="child-menu" style='cursor: pointer ;font-size: large;' ><a><i class="fa fa-angle-right"></i>  Users   &nbsp;&nbsp;&nbsp;&nbsp; &gt;</a>
+                            <div class="sub-menu-wrapper">
+                                <ul class="sub-menu center-content" >
+                                    <li  class="child-menu" (click)="Doctor()" style='cursor: pointer'><a>Doctors <i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                    <li class="child-menu" (click)="TA()" style='cursor: pointer'><a>TA <i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                    <li class="child-menu" (click)="Student()" style='cursor: pointer'><a>Students <i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="child-menu" (click)="Course()" style='cursor: pointer; font-size: large'><a>Courses <i class="fa fa-angle-right"></i></a>
+                        </li>
+                        <li class="child-menu" (click)="Project()" style='cursor: pointer ;font-size: large'><a>Projects <i class="fa fa-angle-right"></i></a>
+                        </li>
+                        <li class="child-menu"  style='cursor: pointer ;font-size: large'><a>Communty <i class="fa fa-angle-right"></i></a>
+                        </li>
+                    </ul>
+                </nav><!-- end nav-menu -->
+            </div><!-- end vertical-header-wrapper -->
+        </header><!-- end header -->
+      </div><!-- end menu-wrapper -->
+  
+  <div id="wrapper">
+    <section class="section">
+         <div class="menu-search">
+            <form >
+                <div class="form-group">
+                    <input type="text" name="searchString" [(ngModel)]="searchString" class="form-control" placeholder="What you are looking?">
+                    
+                </div>
+                
+                <button class="btn btn-primary" (click)="createComm()" style='margin-right: 1115px; margin-top: 90px; width: 100px; margin-left: 50px;'>Add New</button>
+           </form>
+        </div>
+        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group" role="group" aria-label="First group">
+                
+            </div>
+        </div>
+    </section>
+    <div class="position-sticky">
+      <table class="table" style="font: 1em sans-serif;">
+          <thead class="thead-dark">
+              <tr>
+                  <th scope="col" style="width: 20%">ID</th>
+                  <th scope="col" style="width: auto">Name</th>
+                  
+                  <th scope="col" style="width: auto">Description</th>
+                  <th scope="col"></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let communty of allcommunty | filter : {name:searchString};'>
+                  <td>{{communty.id}}</td>
+                  <td>{{communty.name}}</td>
+                  <td>{{communty.description}}</td>
+                  <td id='buttons'>
+                    <a><button type="button" class='btns' (click)="detailsComm(communty.id)" class="btn btn-primary" style='cursor: pointer'>Detalis</button></a>
+                    <a><button type="button" class='btns'  class="btn btn-secondary" style='cursor: pointer'>Update</button></a>
+                    <button type="button" (click)="DeleteCommunty( communty )" class='btns' class="btn btn-danger">Delete</button>
+                  </td>
+              </tr>
+</tbody>
+</table>
+    </div>
+
+    </div>
+</div>
+    
+
+  
+  
+  
+  
+  
+  
+  
+
+

@@ -1,0 +1,188 @@
+
+.flaticon-gears:before {
+    content: "\f109";
+}
+
+.flaticon-technology:before {
+    content: "\f10a";
+}
+
+.flaticon-monitor:before {
+    content: "\f10b";
+}
+
+body {
+    background-color: #ffffff;
+    color: #aeaeae;
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: "Poppins", serif;
+}
+
+a {
+    color: #aeaeae;
+    text-decoration: none;
+}
+
+blockquote,
+a h1,
+a h2,
+a h3,
+a h4,
+a h5,
+a h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4 {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.teammembers img,
+.blog-box,
+.cop-logo img,
+.service-box,
+a {
+    outline: none;
+    text-decoration: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: #000000;
+}
+
+.check li:before {
+    content: "\f00c";
+    font-family: "FontAwesome";
+    font-size: 16px;
+    left: 0;
+    padding-right: 10px;
+    position: relative;
+    top: 2px;
+}
+
+.check li {
+    font-size: 13px;
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.check li:last-child {
+    margin-bottom: 0;
+}
+
+
+.check {
+    margin-left: 0;
+    padding-left: 0
+}
+
+/*********************
+MENU
+*********************/
+
+.vertical-header {
+    position: fixed;
+    left: 0;
+    z-index: 1111;
+    top: 0;
+    bottom: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+
+.vertical-header-wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1)  no-repeat scroll center center;
+    z-index: 10;
+    overflow-x: hidden;
+    min-width: 260px;
+    overflow-y: auto
+}
+
+.subsub-menu-wrapper,
+.sub-menu-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    background-color: #151515;
+    position: absolute;
+    padding: 0px 10px 0;
+    width: 100%;
+    top: 0;
+    max-width: 240px;
+    bottom: 0;
+    left: 60%;
+    height: 100%;
+    display: table;
+    -webkit-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+    -moz-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+    -o-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+    transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+}
+
+.subsub-menu-wrapper {
+    background-color: #191919;
+}
+
+.primary-menu li:hover .subsub-menu li:hover a,
+.primary-menu li:hover .sub-menu-wrapper li:hover a,
+.primary-menu li:hover a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.primary-menu li:hover .subsub-menu li a,
+.primary-menu li:hover .sub-menu-wrapper li a,
+.menu-search .btn,
+.vertical-header li a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.primary-menu li:hover .subsub-menu li a {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.primary-menu li:hover .subsub-menu li:hover a {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+.vertical-header li {
+    list-style: none;
+}
+
+.vertical-header ul {
+    padding: 0 15px;
+}
+
+.sub-menu li:hover .subsub-menu-wrapper,
+.child-menu:hover .sub-menu-wrapper {
+    opacity: 1;
+    z-index: 1000;
+    left: 100%;
+    position: absolute;
+    visibility: visible;
+}

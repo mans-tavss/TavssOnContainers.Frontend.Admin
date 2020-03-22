@@ -1,0 +1,59 @@
+
+  <div id="wrapper">
+    <section class="section">
+         <div class="menu-search">
+             <form>
+                 <div class="form-group">
+                     <input type="text" name="searchString" [(ngModel)]="searchString" class="form-control" placeholder="What you are looking?">
+                     <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                 </div>
+                 <button class="btn btn-primary" (click)=" RegStudent()" style='margin-right: 850px; margin-top: 90px; width: 100px; margin-left: 50px;'>Add New</button>
+             </form>
+        </div>
+        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group" role="group" aria-label="First group">
+            </div>
+        </div>
+    </section>
+    <div class="position-sticky">
+      <table class="table">
+          <thead class="thead-dark">
+              <tr>
+                  <th scope="col" style="width: auto">ID</th>
+                  <th scope="col" style="width: auto">Username</th>
+                  <th scope="col" style="width: auto">Email</th>
+                  <th scope="col" style="width: auto"> Department</th>
+                  <th scope="col" style="width: auto"> level</th>
+                  <th scope="col"></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let student of alluser | filter : {username:searchString};'>
+                  <td>{{student.id}}</td>
+                  <td>{{student.username}}</td>
+                  <td>{{student.email}}</td>
+                  <td>{{student.department}}</td>
+                  <td>{{student.studyYear}}</td>
+                  <td><img src ="{{student.picPath}}" class="img img-fluid" /></td>
+                  <td class='btn-group'>
+                    <a><button type="button"  (click)="DetailsStudent(student.id)" class="btn btn-primary" style='cursor: pointer'>Detalis</button></a>
+                    <a><button type="button" (click)="UpdateStuednt(student.id)"  class="btn btn-secondary" style='cursor: pointer'>Update</button></a>
+                    <button type="button" class='btns' (click)="DeleteStuden(student)" class="btn btn-danger">Delete</button>
+                  </td>
+</tr>
+</tbody>
+</table>
+    </div>
+</div>
+    
+
+  
+  
+  
+  
+  
+  
+  
+
+
+

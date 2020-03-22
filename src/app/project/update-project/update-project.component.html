@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-4">
+        <app-general-app></app-general-app>
+    </div>
+    <div class="col-8">
+        <form style="margin-right: 150px;" id="objects-details-form" #f="ngForm" (ngSubmit)='f.form.valid && onSubmit() ' [appMatchPassword]="['password', 'confirmPassword']" novalidate>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"> </div>
+                    <div class="admin-parts-title col-8 text-center animated bounceInLeft"> Project data </div>
+                    <div class="col-md-2"> </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2"> </div>
+                <div class="form-group col-md-8 ">
+                <label for="inputName">Project Name</label>
+                <input type="text" #name="ngModel" required name="name" class="form-control" id="name" [(ngModel)]="project.projectName">
+                </div>
+                <span style="margin-left: 220px" class="text-danger"
+                    *ngIf="(name.touched || f.submitted) && name.errors?.required">
+                    Project Name is required
+                </span >
+            </div>
+            
+            <div class="form-row">
+                    <div class="col">
+                        <button type='submit' style='width:700px; ' class="admin-details-button text-center">
+                            <a  class="primary-btn" data-text="Save">
+                                <span>S</span>
+                                <span>a</span>
+                                <span>v</span>
+                                <span>e</span>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>

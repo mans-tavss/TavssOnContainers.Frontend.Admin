@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-4">
+        <app-general-app></app-general-app>
+    </div>
+    <div class="col-8">
+        <form style="margin-right: 150px;" id="objects-details-form" #f="ngForm" (ngSubmit)='f.form.valid && onSubmit() ' [appMatchPassword]="['password', 'confirmPassword']" novalidate>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"> </div>
+                    <div class="admin-parts-title col-8 text-center animated bounceInLeft"> Personal data </div>
+                    <div class="col-md-2"> </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2"> </div>
+                <div class="form-group col-md-8 ">
+                <label for="inputName">ID</label>
+                <input type="text" #id="ngModel" required name="id" class="form-control" id="id" [(ngModel)]="student.id">
+                </div>
+                <span style="margin-left: 220px" class="text-danger"
+                *ngIf="(id.touched || f.submitted) && id.errors?.required">
+                ID is required
+            </span >
+            </div>
+            <div class="form-row">
+                    <div class="col-md-2"> </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputEmail4">Username</label>
+                        <input type="text" #username="ngModel" appValidateUserName required name="username" class="form-control" id="username" [(ngModel)]="student.username">
+                    </div>
+                    <div class="col-md-2"> </div>
+                    <span style="margin-left: 220px" class="text-danger"
+                *ngIf="(username.touched || f.submitted) && username.errors?.required">
+                User Name is required
+            </span>
+            <span style="margin-left: 220px" class="text-danger" *ngIf="username.touched && username.errors?.userNameNotAvailable">
+                User Name not available
+            </span>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-2"> </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputEmail4">Email</label>
+                        <input type="text" #email="ngModel" required email name="email" class="form-control" id="email" [(ngModel)]="student.email">
+                    </div>
+                    <div class="col-md-2"> </div>
+                    <span style="margin-left: 220px" class="text-danger"
+                    *ngIf="(email.touched || f.submitted) && email.errors?.required">
+                    Email is required
+                </span>
+                <span style="margin-left: 220px" class="text-danger" *ngIf="email.touched && email.errors?.email">
+                    Enter a valid email address
+                </span>
+            </div>
+            <div class='form-row'>
+                <div class="col-md-2"> </div>
+                <div class="form-group col-md-8">
+                        <label for="inputGender">Departement</label>
+                        <select [(ngModel)]="student.department" #department="ngModel" required id="department" class="form-control" name="department">
+                            <option selected>General</option>
+                            <option>Bio</option>
+                            <option>Soft</option>
+                            <option>IS</option>
+                            <option>IT</option>
+                            <option>CS</option>
+                        </select>
+                </div>
+                <div class="col-md-2"> </div>
+                <span style="margin-left: 220px" class="text-danger"
+                    *ngIf="(department.touched || f.submitted) && department.errors?.required">
+                    Department is required
+                </span >
+            </div>
+            <div class="form-row">
+                    <div class="col-md-2"> </div>
+                    <div class="col-md-8">
+                        <button style='width:700px; ' type='submit' class="admin-details-button text-center">
+                            <a  class="primary-btn" data-text="Save">
+                                <span>S</span>
+                                <span>a</span>
+                                <span>v</span>
+                                <span>e</span>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+          </form>
+    </div>
+</div>
+
+
+
+
+
+

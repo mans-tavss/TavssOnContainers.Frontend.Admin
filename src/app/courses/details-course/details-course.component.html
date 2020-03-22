@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-4">
+        <app-general-app></app-general-app>
+    </div>
+    <div class="col-8">
+        <section class="section" style="margin-left: 10%;">
+            <div class="container" style="margin-left: 10%;">
+                <div class="row">
+                    
+                    <div class="admin-parts-title col-8 text-center animated bounceInLeft"> <h1>Course data</h1> </div>
+                    
+                </div>
+            </div>
+            <form style="margin-right: 150px;" id="objects-details-form" #f="ngForm" (ngSubmit)=' onSubmit() '>
+                <div class="container">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">ID</th>
+                                    <td>{{detailCourse.id}}</td>
+                                    <td></td>
+            
+                                </tr>
+                                <tr>
+                                    <th scope="row">name</th>
+                                    <td>{{detailCourse.name}}</td>
+                                    <td></td>
+        
+                                </tr>
+                               <tr>
+                                <th scope="row">Doctor </th>
+                                   <table>
+                                       <tr *ngFor='let doc of detailCourse.doctors'> 
+                                           <td>{{doc.id}}</td>
+                                           <td>{{doc.name}}</td>
+                                           <td id='buttons' >
+                                            <button type="button" class='btns' (click)="deleteDocFromCourse( detailCourse )" class="btn btn-danger">Delete</button>
+                                           </td>
+                                   </table>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  
+            
+            
+            </form>
+            
+        </section>
+    </div>
+</div>
+
+
+
+
+
+

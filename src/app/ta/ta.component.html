@@ -1,0 +1,57 @@
+
+  <div id="wrapper">
+    <section class="section">
+         <div class="menu-search">
+            <form >
+                <div class="form-group">
+                    <input type="text" name="searchString" [(ngModel)]="searchString" class="form-control" placeholder="What you are looking?">
+                    
+                </div>
+                <button class="btn btn-primary" (click)=" RegDoctor()" style='margin-right: 1115px; margin-top: 90px; width: 100px; margin-left: 50px;'>Add New</button>
+           </form>
+        </div>
+        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group" role="group" aria-label="First group">
+            </div>
+        </div>
+    </section>
+    <div class="position-sticky">
+      <table class="table">
+          <thead class="thead-dark">
+              <tr>
+                  <th scope="col" style="width: 20%">ID</th>
+                  <th scope="col" style="width: auto">Username</th>
+                  <th scope="col" style="width: auto">Email</th>
+                  <th scope="col" style="width: auto">Department</th>
+                  <th scope="col" ></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let TA of allTAs | filter : {username:searchString};'>
+                  <td>{{TA.id}}</td>
+                  <td>{{TA.username}}</td>
+                  <td>{{TA.email}}</td>  
+                  <td>{{TA.department}}</td>
+                  <td id='buttons' >
+                    <button type="button" class='btns' (click)="DetailsTA(TA.id)" class="btn btn-primary" style='cursor: pointer'>Detalis</button>
+                    <button type="button" class='btns' (click)="UpdateTA( TA.id )"  class="btn btn-secondary" style='cursor: pointer'>Update</button>
+                    <button type="button" class='btns' (click)="DeleteTA( TA )" class="btn btn-danger">Delete</button>
+                  </td>
+</tr>
+</tbody>
+</table>
+    </div>
+</div>
+
+    
+
+  
+  
+  
+  
+  
+  
+  
+
+
+

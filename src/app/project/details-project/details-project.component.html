@@ -1,0 +1,156 @@
+<div class="row">
+    <div class="col-4">
+        <app-general-app></app-general-app>
+    </div>
+    <div class="col-8">
+        <section class="section" style="margin-left: 10%;">
+            <div class="container" style="margin-left: 10%;">
+                <div class="row">
+        
+                    <div class="admin-parts-title col-8 text-center animated bounceInLeft"> Project Data </div>
+        
+                </div>
+            </div>
+            <form style="margin-right: 150px;" id="objects-details-form">
+                <div class="container">
+                    <table class="table" style="font: 1em sans-serif;">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Project_Logo</th>
+                                <td><img src="{{ProjectData.projectLogo}}"></td>
+        
+                            </tr>
+                            <tr>
+                                <th scope="row">ID</th>
+                                <td>{{ProjectData.id}}</td>
+        
+                            </tr>
+                            <tr>
+                                <th scope="row">name</th>
+                                <td>{{ProjectData.projectName}}</td>
+        
+                            </tr>
+                            <tr>
+                                <th scope="row">Supervisior</th>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <th scope="row">name</th>
+                                            <th scope="row">ID</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ProjectData.superVisior.name}}</td>
+                                            <td>{{ProjectData.superVisior.id}}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+        
+        
+                            </tr>
+                            <tr>
+                                <th scope="row">Developers</th>
+                                <table>
+                                    <tr>
+                                        <th scope="row">name</th>
+                                        <th scope="row">ID</th>
+                                    </tr>
+                                    <tr *ngFor='let deve of ProjectData.developer'>
+                                        <td>{{deve.name}}</td>
+                                        <td>{{deve.id}}</td>
+                                    </tr>
+                                </table>
+        
+                            </tr>
+                            <tr>
+                                <th scope="row">FrameWork</th>
+                                <table>
+                                    <tr>
+        
+                                        <td>
+                                            <h4 style="font: 3em sans-serif; color: blue;">To Do</h4>
+                                    <tr>
+                                        <table>
+                                            <tr>
+                                                <th scope="row">Name</th>
+                                                <th scope="row">Descreption</th>
+                                                <th scope="row">Start</th>
+                                                <th scope="row">End</th>
+                                            </tr>
+                                            <tr *ngFor='let todo of ProjectData.framework.toDos'>
+                                                <td>{{todo.name}}</td>
+                                                <td>{{todo.descreption}}</td>
+                                                <td>{{todo.startDate}}</td>
+                                                <td>{{todo.endDate}}</td>
+                                            </tr>
+                                        </table>
+                                    </tr>
+                                    </td>
+                            </tr>
+                            <!-- --------------------- -->
+                            <tr>
+        
+                                <td>
+                                    <h4 style="font: 3em sans-serif; color:red;">IN Progress</h4>
+                            <tr>
+                                <table>
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <th scope="row">Descreption</th>
+                                        <th scope="row">Start</th>
+                                        <th scope="row">End</th>
+                                    </tr>
+                                    <tr *ngFor='let Progress of ProjectData.framework.inProgress'>
+                                        <td>{{Progress.name}}</td>
+                                        <td>{{Progress.descreption}}</td>
+                                        <td>{{Progress.startDate}}</td>
+                                        <td>{{Progress.endDate}}</td>
+                                    </tr>
+                                </table>
+                            </tr>
+                            </td>
+                            </tr>
+                            <!-- ------------------- -->
+                            <tr>
+        
+                                <td>
+                                    <h4 style="font: 3em sans-serif; color: green;">DONE</h4>
+                            <tr>
+                                <table>
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <th scope="row">Descreption</th>
+                                        <th scope="row">Start</th>
+                                        <th scope="row">End</th>
+                                    </tr>
+                                    <tr *ngFor='let done of ProjectData.framework.dones'>
+                                        <td>{{done.name}}</td>
+                                        <td>{{done.descreption}}</td>
+                                        <td>{{done.startDate}}</td>
+                                        <td>{{done.endDate}}</td>
+                                    </tr>
+                                </table>
+                            </tr>
+                            </td>
+                            </tr>
+                    </table>
+                </tr>
+                    <tr>
+                        <th scope="row">Mark</th>
+                        <td>{{ProjectData.mark}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Wike</th>
+                        <td>{{ProjectData.wiki}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Wike</th>
+                        <td>{{ProjectData.wiki}}</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div>
+           </form>
+        </section>   
+    </div>
+
+</div>

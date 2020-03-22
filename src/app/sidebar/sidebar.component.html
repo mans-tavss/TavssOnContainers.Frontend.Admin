@@ -1,0 +1,111 @@
+<div class="mobile-menu">
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Menu Example 01</a></li>
+                        <li><a href="#">Menu Example 02</a></li>
+                        <li><a href="#">Menu Example 03</a></li>
+                        <li><a href="#">Menu Example 04</a></li>
+                        <li><a href="#">Menu Example 05</a></li>
+                        <li><a href="#">Menu Example 06</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Menu Example 01</a></li>
+                        <li><a href="#">Menu Example 02</a></li>
+                        <li><a href="#">Menu Example 03</a></li>
+                        <li><a href="#">Menu Example 04</a></li>
+                        <li><a href="#">Menu Example 05</a></li>
+                        <li><a href="#">Menu Example 06</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Menu Example 01</a></li>
+                        <li><a href="#">Menu Example 02</a></li>
+                        <li><a href="#">Menu Example 03</a></li>
+                        <li><a href="#">Menu Example 04</a></li>
+                        <li><a href="#">Menu Example 05</a></li>
+                        <li><a href="#">Menu Example 06</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Menu Example 01</a></li>
+                        <li><a href="#">Menu Example 02</a></li>
+                        <li><a href="#">Menu Example 03</a></li>
+                        <li><a href="#">Menu Example 04</a></li>
+                        <li><a href="#">Menu Example 05</a></li>
+                        <li><a href="#">Menu Example 06</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Menu Example 01</a></li>
+                        <li><a href="#">Menu Example 02</a></li>
+                        <li><a href="#">Menu Example 03</a></li>
+                        <li><a href="#">Menu Example 04</a></li>
+                        <li><a href="#">Menu Example 05</a></li>
+                        <li><a href="#">Menu Example 06</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://html.design">Download <i class="fa fa-shopping-bag"></i></a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+    </nav>
+</div><!-- end mobile-menu -->
+<div class='parent'>
+    <header class="vertical-header">
+        <div class="vertical-header-wrapper">
+            <nav class="nav-menu">
+                <div class="logo">
+                    <div id='img'><img style='width: 80%;' src={{localpath}}></div>
+                </div><!-- end logo -->
+  
+                <div class="margin-block"></div>
+  
+                <ul class="primary-menu">
+                    <li class="child-menu" style='cursor: pointer ;font-size: large;' ><a><i class="fa fa-angle-right"></i>  Users   &nbsp;&nbsp;&nbsp;&nbsp; &gt;</a>
+                        <div class="sub-menu-wrapper">
+                            <ul class="sub-menu center-content" >
+                                <li  class="child-menu" (click)="Doctor()" style='cursor: pointer'><a>Doctors <i class="fa fa-angle-right"></i></a>
+                                </li>
+                                <li class="child-menu" (click)="TA()" style='cursor: pointer'><a>TA <i class="fa fa-angle-right"></i></a>
+                                </li>
+                                <li class="child-menu" (click)="Student()" style='cursor: pointer'><a>Students <i class="fa fa-angle-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="child-menu" (click)="Course()" style='cursor: pointer; font-size: large'><a>Courses <i class="fa fa-angle-right"></i></a>
+                    </li>
+                    <li class="child-menu" (click)="Project()" style='cursor: pointer ;font-size: large'><a>Projects <i class="fa fa-angle-right"></i></a>
+                    </li>
+                    <li class="child-menu" (click)="Community()" style='cursor: pointer ;font-size: large'><a>Community <i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav><!-- end nav-menu -->
+        </div><!-- end vertical-header-wrapper -->
+    </header><!-- end header -->
+  </div><!-- end menu-wrapper -->

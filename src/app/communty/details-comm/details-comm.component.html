@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-4">
+        <app-general-app></app-general-app>
+    </div>
+    <div class="col-8">
+        <section class="section" style="margin-left: 10%;">
+            <div class="container" style="margin-left: 10%;">
+                <div class="row">
+                    
+                    <div class="admin-parts-title col-8 text-center animated bounceInLeft"> <h1>Community Data</h1> </div>
+                    
+                </div>
+            </div>
+            <form style="margin-right: 150px;" id="objects-details-form" #f="ngForm" (ngSubmit)=' onSubmit() '>
+                <div class="container">
+                        <table class="table" style="font: 1em sans-serif;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">ID</th>
+                                    <td>{{detailComm.id}}</td>
+                                    <td></td>
+            
+                                </tr>
+                                <tr>
+                                    <th scope="row">name</th>
+                                    <td>{{detailComm.name}}</td>
+                                    <td></td>
+        
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description</th>
+                                    <td>{{detailComm.description}}</td>
+                                    <td></td>
+        
+                                </tr>
+                               <tr>
+                                <th scope="row">Developars </th>
+                                   <table>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                    </tr>
+                                       <tr *ngFor='let deve of detailComm.developers'> 
+                                           <td>{{deve.id}}</td>
+                                           <td>{{deve.name}}</td>
+                                           <!-- <td id='buttons' >
+                                            <button type="button" class='btns' (click)="deleteDeve( detailComm )" class="btn btn-danger">Delete</button>
+                                           </td> -->
+                                   </table>
+                               </tr>
+                               <tr>
+                                <th scope="row">Companies </th>
+                                   <table>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Descrption</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Contacts</th>
+                                    </tr>
+                                       <tr *ngFor='let com of detailComm.companies'> 
+                                           <td>{{com.id}}</td>
+                                           <td>{{com.name}}</td>
+                                           <td>{{com.description}}</td>
+                                           <td>{{com.address}}</td>
+                                           <td>{{com.contacts}}</td>
+                                           <!-- <td id='buttons' >
+                                            <button type="button" class='btns' (click)="deleteDeve( detailComm )" class="btn btn-danger">Delete</button>
+                                           </td> -->
+                                   </table>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  
+            
+            
+            </form>
+            
+        </section>
+    </div>
+</div>
+
+
+
+
+
+
+
