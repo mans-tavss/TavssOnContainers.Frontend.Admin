@@ -23,40 +23,41 @@ import { UpdateProjectComponent } from './project/update-project/update-project.
 import { CommuntyComponent } from './communty/communty.component';
 import { CreateCommComponent } from './communty/create-comm/create-comm.component';
 import { DetailsCommComponent } from './communty/details-comm/details-comm.component';
-
-
-
+import {ControlPageComponent} from './control-page/control-page.component'
+import {AdminLoginComponent} from './admin-login/admin-login.component'
 
 const routes: Routes = [
-  { path: 'general' , component: GeneralAppComponent },
-  { path: '', redirectTo:'/general' , pathMatch:'full' },
-  { path: 'doctor' , component: DoctorComponent },
-  { path: 'TA' , component: TAComponent },
-  { path: 'student' , component: StudentComponent },
-  { path: 'RegisterTA' , component:RegisterTaComponent },
-  { path: 'TAdetails/:id', component:DetailsTaComponent },
-  { path: 'UpdateTA/:id' , component: UpdateTaComponent },
-  { path: 'RegisterStudent' , component: RegisterStudentComponent },
-  { path: 'StudentDetails/:id' , component:DetailsStComponent },
-  { path: 'StudentUpdate/:id' , component: UpdateStComponent },
-  { path: 'RegisterDoctor' , component: RegisterDoctorComponent },
-  { path: 'DoctorDetails/:id' , component:DetailsDoctorComponent },
-  { path: 'UpdateDoctor/:id' , component: UpdateDoctorComponent },
+  { path: 'general' , component: AdminLoginComponent },
+  {path:'Controlpanel'  , children :[
+    { path: 'doctor',outlet:'control' , component: DoctorComponent },
+  { path: 'TA',outlet:'control' , component: TAComponent },
+  { path: 'student',outlet:'control' , component: StudentComponent },
+  { path: 'RegisterTA',outlet:'control' , component:RegisterTaComponent },
+  { path: 'TAdetails/:id',outlet:'control', component:DetailsTaComponent },
+  { path: 'UpdateTA/:id' ,outlet:'control', component: UpdateTaComponent },
+  { path: 'RegisterStudent' ,outlet:'control', component: RegisterStudentComponent },
+  { path: 'StudentDetails/:id' ,outlet:'control', component:DetailsStComponent },
+  { path: 'StudentUpdate/:id',outlet:'control' , component: UpdateStComponent },
+  { path: 'RegisterDoctor' ,outlet:'control', component: RegisterDoctorComponent },
+  { path: 'DoctorDetails/:id',outlet:'control' , component:DetailsDoctorComponent },
+  { path: 'UpdateDoctor/:id',outlet:'control' , component: UpdateDoctorComponent },
   //Courses
-  { path: 'Courses' , component:CoursesComponent },
-  { path: 'createCourse' , component:CreateCourseComponent },
-  { path: 'detailsCourse/:id'  , component: DetailsCourseComponent},
-  { path: 'updateCourse/:id' , component : UpdateCourseComponent },
+  { path: 'Courses',outlet:'control' , component:CoursesComponent },
+  { path: 'createCourse' ,outlet:'control', component:CreateCourseComponent },
+  { path: 'detailsCourse/:id' ,outlet:'control' , component: DetailsCourseComponent},
+  { path: 'updateCourse/:id',outlet:'control' , component : UpdateCourseComponent },
   //Projects
-  { path: 'Project' , component : ProjectComponent },
-  { path: 'ProjectDetails/:id' , component : DetailsProjectComponent },
-  { path: 'updateProject/:id' , component: UpdateProjectComponent },
+  { path: 'Project' ,outlet:'control', component : ProjectComponent },
+  { path: 'ProjectDetails/:id',outlet:'control' , component : DetailsProjectComponent },
+  { path: 'updateProject/:id' ,outlet:'control', component: UpdateProjectComponent },
   //Communty
-  { path:'Communty' , component : CommuntyComponent},
-  { path:'Createcomm' , component : CreateCommComponent},
-  { path:'Detailscomm/:id' , component : DetailsCommComponent},
+  { path:'Communty',outlet:'control' , component : CommuntyComponent},
+  { path:'Createcomm' ,outlet:'control', component : CreateCommComponent},
+  { path:'Detailscomm/:id' ,outlet:'control', component : DetailsCommComponent},
   
-
+], component:ControlPageComponent},
+  { path: '', redirectTo:'/general' , pathMatch:'full' },
+  
    
 ];
 

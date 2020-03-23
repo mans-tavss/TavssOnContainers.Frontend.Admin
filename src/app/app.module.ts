@@ -38,7 +38,8 @@ import { CreateCommComponent } from './communty/create-comm/create-comm.componen
 import { DetailsCommComponent } from './communty/details-comm/details-comm.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ControlPageComponent } from './control-page/control-page.component';
-
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 
 
 
@@ -76,6 +77,7 @@ import { ControlPageComponent } from './control-page/control-page.component';
     DetailsCommComponent,
     SidebarComponent,
     ControlPageComponent,
+    AdminLoginComponent,
     
     
   ],
@@ -85,9 +87,10 @@ import { ControlPageComponent } from './control-page/control-page.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    FontAwesomeModule
     
   ],
   providers: [RegStudentService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,AdminLoginComponent]
 })
 export class AppModule { }

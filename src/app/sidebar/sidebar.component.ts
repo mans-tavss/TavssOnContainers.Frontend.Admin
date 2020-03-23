@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
 
   localpath = '../assets/TAVSSv1.png';
-  constructor(private route: Router) { 
+  constructor(private routes: Router, private route :ActivatedRoute) { 
 
     
   }
@@ -20,31 +21,32 @@ export class SidebarComponent implements OnInit {
     //Functions
     Doctor()
     {
-      this.route.navigate(['/doctor']);
+      this.routes.navigate([ { outlets: { "control": ["doctor"] } } ], { relativeTo: this.route });
     }
   
     TA()
     {
-      this.route.navigate(['/TA']);
+      this.routes.navigate([ { outlets: { "control": ["TA"] } } ], { relativeTo: this.route });
     }
   
     Student()
     {
-      this.route.navigate(['/student']);
+      this.routes.navigate([ { outlets: { "control": ["student"] } } ], { relativeTo: this.route });
+
     }
   
     Project()
     {
-      this.route.navigate(['/Project']);
+      this.routes.navigate([ { outlets: { "control": ["Project"] } } ], { relativeTo: this.route });
     }
     Community()
     {
-      this.route.navigate(['/Communty']);
+      this.routes.navigate([ { outlets: { "control": ["Communty"] } } ], { relativeTo: this.route });
     }
 
     Course()
     {
-      this.route.navigate(['/Communty']);
+      this.routes.navigate([ { outlets: { "control": ["Course"] } } ], { relativeTo: this.route });
     }
 
 }
