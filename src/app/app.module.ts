@@ -39,7 +39,10 @@ import { DetailsCommComponent } from './communty/details-comm/details-comm.compo
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ControlPageComponent } from './control-page/control-page.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { MonitoringComponent } from './monitoring/monitoring.component';
+import { RanksComponent } from './monitoring/ranks/ranks.component';
+
 
 
 
@@ -78,6 +81,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
     SidebarComponent,
     ControlPageComponent,
     AdminLoginComponent,
+    MonitoringComponent,
+    RanksComponent,
+
     
     
   ],

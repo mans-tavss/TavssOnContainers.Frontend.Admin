@@ -25,11 +25,16 @@ import { CreateCommComponent } from './communty/create-comm/create-comm.componen
 import { DetailsCommComponent } from './communty/details-comm/details-comm.component';
 import {ControlPageComponent} from './control-page/control-page.component'
 import {AdminLoginComponent} from './admin-login/admin-login.component'
+import { MonitoringComponent } from './monitoring/monitoring.component';
+import { RanksComponent } from './monitoring/ranks/ranks.component';
 
 const routes: Routes = [
   { path: 'general' , component: AdminLoginComponent },
   {path:'Controlpanel'  , children :[
     { path: 'doctor',outlet:'control' , component: DoctorComponent },
+    { path: 'monitor',outlet:'control' , component: MonitoringComponent },
+    { path: 'ranks',outlet:'control' , component: RanksComponent },
+
   { path: 'TA',outlet:'control' , component: TAComponent },
   { path: 'student',outlet:'control' , component: StudentComponent },
   { path: 'RegisterTA',outlet:'control' , component:RegisterTaComponent },

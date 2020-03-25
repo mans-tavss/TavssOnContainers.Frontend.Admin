@@ -1,0 +1,4 @@
+.parent{overflow: hidden;}
+.vertical-header , #wrapper{float: right;}
+.vertical-header{width: 20%;}
+#wrapper{width: 80%;}

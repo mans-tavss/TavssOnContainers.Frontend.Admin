@@ -17,7 +17,16 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
   }
 
+    monitor()
+    {
+      this.routes.navigate([ { outlets: { "control": ["monitor"] } } ], { relativeTo: this.route });
 
+    }
+    ranks()
+    {
+      this.routes.navigate([ { outlets: { "control": ["ranks"] } } ], { relativeTo: this.route });
+
+    }
     //Functions
     Doctor()
     {
