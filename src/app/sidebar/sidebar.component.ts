@@ -10,11 +10,12 @@ export class SidebarComponent implements OnInit {
 
   localpath = '../assets/TAVSSv1.png';
   constructor(private routes: Router, private route :ActivatedRoute) { 
-
+    
     
   }
 
   ngOnInit() {
+    this.InitAPIUrls();
   }
 
     monitor()
@@ -24,6 +25,7 @@ export class SidebarComponent implements OnInit {
     }
     ranks()
     {
+      
       this.routes.navigate([ { outlets: { "control": ["ranks"] } } ], { relativeTo: this.route });
 
     }
@@ -56,6 +58,15 @@ export class SidebarComponent implements OnInit {
     Course()
     {
       this.routes.navigate([ { outlets: { "control": ["Course"] } } ], { relativeTo: this.route });
+    }
+
+    InitAPIUrls =()=>{
+      localStorage.setItem("IdentityAPI" ,  "https://localhost:5001/");
+      localStorage.setItem("CourseAPI" ,  "https://localhost:5000/");
+      localStorage.setItem("ProjectAPI" ,  "https://localhost:5000/");
+      localStorage.setItem("AcclaimAPI" ,  "https://localhost:5000/");
+      localStorage.setItem("RealTimeAPI" ,  "https://localhost:5000/");
+
     }
 
 }

@@ -13,54 +13,12 @@ export class DoctorComponent implements OnInit {
 
   //variables
   title = 'DoctorApp'
- 
+  API :string;
   searchString : String;
   alldoctors;
 
   //Functions
-  TA()
-  {
-    this._router.navigate(['/TA']);
-  }
 
-  Students()
-  {
-    this._router.navigate(['/student']);
-  }
-
-  Admin()
-  {
-    this._router.navigate(['/general']);
-  }
-
-  RegDoctor()
-  {
-    this._router.navigate(['/RegisterDoctor']);
-  }
-
-  DetailsDoctor(id : string)
-  {
-    this._router.navigate(['/DoctorDetails/' , id]);
-  }
-
-  UpdateDoctor(id: string)
-  {
-    this._router.navigate(['/UpdateDoctor/' , id]);
-  }
-
-  Course()
-  {
-    this._router.navigate(['/Courses']);
-  }
-
-  Project()
-  {
-    this._router.navigate(['/Project']);
-  }
-  Community()
-  {
-    this._router.navigate(['/Communty']);
-  }
   loadDoctor ()
   {
     return this._rest.getDataList().subscribe(
@@ -72,7 +30,7 @@ export class DoctorComponent implements OnInit {
   {
     if ( confirm ( "Are you sure you delete this doctor? " ) )
     {
-      this._http.delete( "https://localhost:5001/api/v1/DeleteUser" + '/' + doctor.id )
+      this._http.delete( this.API +"api/v1/DeleteUser" + '/' + doctor.id )
           .subscribe( res => {
             let index = this.alldoctors.indexOf( doctor );
             this.alldoctors.splice( index , 1 );
@@ -88,9 +46,10 @@ export class DoctorComponent implements OnInit {
     private _http : HttpClient , 
     private _rest : DocServiceService,
     private Title : Title ) {}  
-
+   
   ngOnInit() {
     this.Title.setTitle(this.title)
+    this.API = localStorage.getItem("IdentityAPI");
     this.loadDoctor();
   }
 

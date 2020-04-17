@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RegStudentService } from './StudentService/reg-student.service';
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http'
 import { Title } from '@angular/platform-browser';
 @Component({
@@ -15,16 +14,16 @@ export class StudentComponent implements OnInit {
   localpath = '../assets/TAVSSv1.png';
 
   id ;
-
+  APIUrl : string;
   searchString : String;
-  
+
   alluser;
 
   title = 'StudentApp'
 
   constructor(
     private http : HttpClient,
-    private _router : Router , 
+    private routes : Router , 
     public Stservice : RegStudentService , 
     private route : ActivatedRoute,
     private Title : Title  ) 
@@ -35,46 +34,46 @@ export class StudentComponent implements OnInit {
   //Functions
   Doctor()
   {
-    this._router.navigate(['/doctor']);
+    this.routes.navigate(['/doctor']);
   }
 
   TA()
   {
-    this._router.navigate(['/TA']);
+    this.routes.navigate(['/TA']);
   }
 
   Admin()
   {
-    this._router.navigate(['/general']);
+    this.routes.navigate(['/general']);
   }
 
   RegStudent()
   {
-    this._router.navigate(['/RegisterStudent']);
+    this.routes.navigate(['/RegisterStudent']);
   }
 
   DetailsStudent(id : string)
   {
-    this._router.navigate(['/StudentDetails/' , id]);
+    this.routes.navigate(['/Controlpanel'  ,{ outlets: { "control": ["StudentDetails", id] } } ]);
   }
 
   UpdateStuednt(id)
   {
-    this._router.navigate(['/StudentUpdate/', id]);
+    this.routes.navigate(['/StudentUpdate/', id]);
   }//we remove it and replace it in component by routerlink with student.id
 
   Course()
   {
-    this._router.navigate(['/Courses']);
+    this.routes.navigate(['/Courses']);
   }
 
   Project()
   {
-    this._router.navigate(['/Project']);
+    this.routes.navigate(['/Project']);
   }
   Community()
   {
-    this._router.navigate(['/Communty']);
+    this.routes.navigate(['/Communty']);
   }
   loadStudent () 
   {
@@ -99,6 +98,7 @@ export class StudentComponent implements OnInit {
 
    ngOnInit() {
      this.Title.setTitle(this.title)
+     this.APIUrl = localStorage.getItem('IdentityAPI');
      this.loadStudent();
   }
 

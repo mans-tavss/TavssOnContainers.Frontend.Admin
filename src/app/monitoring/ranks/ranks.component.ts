@@ -2,6 +2,7 @@ import { Component, OnInit , NgZone } from '@angular/core';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import { any } from '@amcharts/amcharts4/.internal/core/utils/Array';
 
 am4core.useTheme(am4themes_animated);
 
@@ -55,7 +56,7 @@ export class RanksComponent implements OnInit {
       categoryAxis.renderer.grid.template.strokeOpacity = 0;
       categoryAxis.renderer.minGridDistance = 10;
       categoryAxis.renderer.labels.template.dx = -40;
-      categoryAxis.renderer.minWidth = 120;
+      categoryAxis.renderer.minWidth = 100;
       categoryAxis.renderer.tooltip.dx = -40;
       
       let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
@@ -115,15 +116,15 @@ export class RanksComponent implements OnInit {
       
       image.adapter.add("mask", function (mask, target) {
           let circleBullet = target.parent;
-          return circleBullet.circle;
+          return circleBullet.circle ;
       })
       
       let previousBullet;
       chart.cursor.events.on("cursorpositionchanged", function (event) {
           let dataItem = series.tooltipDataItem;
       
-          if (dataItem.column) {
-              let bullet = dataItem.column.children.getIndex(1);
+          if (dataItem.column ) {
+              let bullet = dataItem.column.children.getIndex(1) ;
       
               if (previousBullet && previousBullet != bullet) {
                   previousBullet.isHover = false;
@@ -132,7 +133,7 @@ export class RanksComponent implements OnInit {
               if (previousBullet != bullet) {
       
                   let hs = bullet.states.getKey("hover");
-                  hs.properties.dx = dataItem.column.pixelWidth;
+                  hs.properties.dx = dataItem.column.pixelWidth ;
                   bullet.isHover = true;
       
                   previousBullet = bullet;

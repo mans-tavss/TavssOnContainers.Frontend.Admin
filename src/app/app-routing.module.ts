@@ -30,19 +30,26 @@ import { RanksComponent } from './monitoring/ranks/ranks.component';
 
 const routes: Routes = [
   { path: 'general' , component: AdminLoginComponent },
+  { path: 'StudentDetails' , component:DetailsStComponent },
   {path:'Controlpanel'  , children :[
     { path: 'doctor',outlet:'control' , component: DoctorComponent },
     { path: 'monitor',outlet:'control' , component: MonitoringComponent },
     { path: 'ranks',outlet:'control' , component: RanksComponent },
+    { path: 'TA',outlet:'control' , component: TAComponent },
 
-  { path: 'TA',outlet:'control' , component: TAComponent },
-  { path: 'student',outlet:'control' , component: StudentComponent },
-  { path: 'RegisterTA',outlet:'control' , component:RegisterTaComponent },
-  { path: 'TAdetails/:id',outlet:'control', component:DetailsTaComponent },
-  { path: 'UpdateTA/:id' ,outlet:'control', component: UpdateTaComponent },
-  { path: 'RegisterStudent' ,outlet:'control', component: RegisterStudentComponent },
-  { path: 'StudentDetails/:id' ,outlet:'control', component:DetailsStComponent },
-  { path: 'StudentUpdate/:id',outlet:'control' , component: UpdateStComponent },
+    //Students
+    { path: 'student',outlet:'control' , component: StudentComponent },
+    { path: 'RegisterStudent' ,outlet:'control', component: RegisterStudentComponent },
+    { path: 'StudentDetails/:id' ,outlet:'control', component:DetailsStComponent },
+    { path: 'StudentUpdate',outlet:'control' , component: UpdateStComponent },
+
+
+    //TA
+    { path: 'RegisterTA',outlet:'control' , component:RegisterTaComponent },
+    { path: 'TAdetails/:id',outlet:'control', component:DetailsTaComponent },
+    { path: 'UpdateTA/:id' ,outlet:'control', component: UpdateTaComponent },
+
+
   { path: 'RegisterDoctor' ,outlet:'control', component: RegisterDoctorComponent },
   { path: 'DoctorDetails/:id',outlet:'control' , component:DetailsDoctorComponent },
   { path: 'UpdateDoctor/:id',outlet:'control' , component: UpdateDoctorComponent },
@@ -61,6 +68,8 @@ const routes: Routes = [
   { path:'Detailscomm/:id' ,outlet:'control', component : DetailsCommComponent},
   
 ], component:ControlPageComponent},
+
+
   { path: '', redirectTo:'/general' , pathMatch:'full' },
   
    

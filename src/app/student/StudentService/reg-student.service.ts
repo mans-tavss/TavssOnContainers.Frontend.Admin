@@ -9,8 +9,10 @@ import { retry, catchError } from 'rxjs/operators';
 export class RegStudentService {
 
 
-  constructor( private _http : HttpClient ) { }
-
+  constructor( private _http : HttpClient ) {
+    this.APIUrl = localStorage.getItem('IdentityAPI');
+   }
+  APIUrl :  string;
   // Http Headers
   Headers = {
     headers: new HttpHeaders({
@@ -35,19 +37,19 @@ export class RegStudentService {
  //create Student
  RegSt( newSt : Object ):Observable<Object>
  {
-   return this._http.post( "https://localhost:5001/api/v1/RegisterStudent" , newSt )
+   return this._http.post( this.APIUrl+"api/v1/RegisterStudent" , newSt )
  }
 
   //Get (Details) for one user
   getStudent(id : string) 
   {
-    return this._http.get("https://localhost:5001/api/v1/GetStudent" + '/' + id);
+    return this._http.get(this.APIUrl+"api/v1/GetStudent" + '/' + id);
   }
 
   //GET List Student
   getDataList() 
   {
-    return this._http.get("https://localhost:5001/api/v1/GetStudents")
+    return this._http.get(this.APIUrl+"api/v1/GetStudents")
     .pipe(
       retry(3),
       catchError(this.errorHandl)
@@ -57,7 +59,7 @@ export class RegStudentService {
   //updateTA
   updateSt( id : string , value : any ) : Observable<object>
   {
-    return this._http.put( "https://localhost:5001/api/v1/UpdateUser" , value)
+    return this._http.put( this.APIUrl+"api/v1/UpdateUser" , value)
     .pipe(
       retry(3),
       catchError(this.errorHandl)

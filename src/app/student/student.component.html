@@ -1,5 +1,5 @@
 
-  <div id="wrapper">
+  <div id="wrapper" style="width:80%">
     <section class="section">
          <div class="menu-search">
              <form>
@@ -24,7 +24,8 @@
                   <th scope="col" style="width: auto">Email</th>
                   <th scope="col" style="width: auto"> Department</th>
                   <th scope="col" style="width: auto"> level</th>
-                  <th scope="col"></th>
+                  <th scope="col" style="width: auto">Image</th>
+                  <th scope="col" style="width: auto">Controling</th>
               </tr>
           </thead>
           <tbody>
@@ -34,11 +35,14 @@
                   <td>{{student.email}}</td>
                   <td>{{student.department}}</td>
                   <td>{{student.studyYear}}</td>
-                  <td><img src ="{{student.picPath}}" class="img img-fluid" /></td>
+                  <td><img src ="{{ APIUrl +student.picPath}}" class="img img-fluid" /></td>
                   <td class='btn-group'>
-                    <a><button type="button"  (click)="DetailsStudent(student.id)" class="btn btn-primary" style='cursor: pointer'>Detalis</button></a>
-                    <a><button type="button" (click)="UpdateStuednt(student.id)"  class="btn btn-secondary" style='cursor: pointer'>Update</button></a>
-                    <button type="button" class='btns' (click)="DeleteStuden(student)" class="btn btn-danger">Delete</button>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" (click)="DetailsStudent(student.id)" class="btn btn-primary">Details</button>
+                    <button type="button" (click)="UpdateStuednt(student.id)" class="btn btn-warning">Update</button>
+                    <button type="button" (click)="DeleteStuden(student)" class="btn btn-danger">Delete</button>
+                    </div>
+
                   </td>
 </tr>
 </tbody>

@@ -2,3 +2,77 @@
 .vertical-header , #wrapper{float: right;}
 .vertical-header{width: 20%;}
 #wrapper{width: 80%;}
+
+
+.center-tile::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: blue;
+	width: 100%;
+	height: 100%;
+	-webkit-mask: radial-gradient(circle at 50% 0%, transparent 40px, #000 0);
+	mask: radial-gradient(circle at 50% 0%, transparent 40px, #000 0);
+}
+
+.fab {
+	display: block;
+	position: absolute;
+	width: 66px;
+	height: 66px;
+	background-color: blueviolet;
+	color: white;
+	text-decoration:none;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+
+}
+.fab .span {
+    position: relative;
+    top: -3px;
+}
+
+*,*:before,*:after {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Inter', sans-serif
+}
+
+.nav {
+	background-color: transparent;
+	color: black;
+	width: 100%;
+	max-width: 700px;
+	min-height: 63px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 100px 1fr 1fr;
+	align-items: center;
+}
+
+.tile {
+	background-color: black;
+	height: 100%;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    width: 235px;
+    max-width: 500px;
+}
+
+.center-tile {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
