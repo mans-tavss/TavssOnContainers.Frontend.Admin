@@ -41,7 +41,7 @@ const routes: Routes = [
     { path: 'student',outlet:'control' , component: StudentComponent },
     { path: 'RegisterStudent' ,outlet:'control', component: RegisterStudentComponent },
     { path: 'StudentDetails/:id' ,outlet:'control', component:DetailsStComponent },
-    { path: 'StudentUpdate',outlet:'control' , component: UpdateStComponent },
+    { path: 'StudentUpdate/:id',outlet:'control' , component: UpdateStComponent },
 
 
     //TA
@@ -66,13 +66,13 @@ const routes: Routes = [
   { path:'Communty',outlet:'control' , component : CommuntyComponent},
   { path:'Createcomm' ,outlet:'control', component : CreateCommComponent},
   { path:'Detailscomm/:id' ,outlet:'control', component : DetailsCommComponent},
-  
+
 ], component:ControlPageComponent},
 
 
   { path: '', redirectTo:'/general' , pathMatch:'full' },
-  
-   
+
+
 ];
 
 @NgModule({

@@ -22,9 +22,9 @@ export class RanksComponent implements OnInit {
     this.zone.runOutsideAngular(() => {
       let chart = am4core.create("chartdiv", am4charts.XYChart);
       chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-      
+
       chart.paddingRight = 40;
-      
+
       chart.data = [{
           "name": "Monica",
           "steps": 77,
@@ -50,7 +50,7 @@ export class RanksComponent implements OnInit {
           "steps": 89,
           "href": "https://www.amcharts.com/wp-content/uploads/2019/04/chandler.jpg"
       }];
-      
+
       let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
       categoryAxis.dataFields.category = "name";
       categoryAxis.renderer.grid.template.strokeOpacity = 0;
@@ -58,7 +58,7 @@ export class RanksComponent implements OnInit {
       categoryAxis.renderer.labels.template.dx = -40;
       categoryAxis.renderer.minWidth = 100;
       categoryAxis.renderer.tooltip.dx = -40;
-      
+
       let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
       valueAxis.renderer.inside = true;
       valueAxis.renderer.labels.template.fillOpacity = 0.3;
@@ -67,7 +67,7 @@ export class RanksComponent implements OnInit {
       valueAxis.cursorTooltipEnabled = false;
       valueAxis.renderer.baseGrid.strokeOpacity = 0;
       valueAxis.renderer.labels.template.dy = 20;
-      
+
       let series = chart.series.push(new am4charts.ColumnSeries);
       series.dataFields.valueX = "steps";
       series.dataFields.categoryY = "name";
@@ -75,22 +75,22 @@ export class RanksComponent implements OnInit {
       series.tooltip.pointerOrientation = "vertical";
       series.tooltip.dy = - 30;
       series.columnsContainer.zIndex = 100;
-      
+
       let columnTemplate = series.columns.template;
       columnTemplate.height = am4core.percent(50);
       columnTemplate.maxHeight = 50;
       columnTemplate.column.cornerRadius(60, 10, 60, 10);
       columnTemplate.strokeOpacity = 0;
-      
+
       series.heatRules.push({ target: columnTemplate, property: "fill", dataField: "valueX", min: am4core.color("#e5dc36"), max: am4core.color("#5faa46") });
       series.mainContainer.mask = undefined;
-      
+
       let cursor = new am4charts.XYCursor();
       chart.cursor = cursor;
       cursor.lineX.disabled = true;
       cursor.lineY.disabled = true;
       cursor.behavior = "none";
-      
+
       let bullet = columnTemplate.createChild(am4charts.CircleBullet);
       bullet.circle.radius = 30;
       bullet.valign = "middle";
@@ -99,48 +99,48 @@ export class RanksComponent implements OnInit {
       bullet.interactionsEnabled = false;
       bullet.horizontalCenter = "right";
       bullet.interactionsEnabled = false;
-      
+
       let hoverState = bullet.states.create("hover");
       let outlineCircle = bullet.createChild(am4core.Circle);
       outlineCircle.adapter.add("radius", function (radius, target) {
           let circleBullet = target.parent;
-          return circleBullet.circle.pixelRadius + 10;
+          return (circleBullet.circle as any).pixelRadius + 10;
       })
-      
+
       let image = bullet.createChild(am4core.Image);
       image.width = 60;
       image.height = 60;
       image.horizontalCenter = "middle";
       image.verticalCenter = "middle";
       image.propertyFields.href = "href";
-      
+
       image.adapter.add("mask", function (mask, target) {
           let circleBullet = target.parent;
-          return circleBullet.circle ;
+          return circleBullet.circle as any ;
       })
-      
+
       let previousBullet;
       chart.cursor.events.on("cursorpositionchanged", function (event) {
           let dataItem = series.tooltipDataItem;
-      
-          if (dataItem.column ) {
-              let bullet = dataItem.column.children.getIndex(1) ;
-      
+
+          if (dataItem.column as any) {
+              let bullet = (dataItem.column as any).children.getIndex(1) ;
+
               if (previousBullet && previousBullet != bullet) {
                   previousBullet.isHover = false;
               }
-      
+
               if (previousBullet != bullet) {
-      
+
                   let hs = bullet.states.getKey("hover");
-                  hs.properties.dx = dataItem.column.pixelWidth ;
+                  hs.properties.dx = (dataItem.column as any).pixelWidth;
                   bullet.isHover = true;
-      
+
                   previousBullet = bullet;
               }
           }
       })
-      
+
     });
   }
 

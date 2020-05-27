@@ -1,63 +1,86 @@
 
 
   <div id="wrapper" style="width:80%">
-        <section class="section" style="margin-left: 10%;">
-            <div class="container" style="margin-left: 10%;">
-                <div class="row">
-                    
-                    <div class="admin-parts-title col-8 text-center animated bounceInLeft"> Personal data </div>
-                    
-                </div>
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class=" row profile-userpic">
+					<img src="{{ APIUrl +StData.picPath}}" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{StData.username}}
+					</div>
+					<div class="profile-usertitle-job">
+						{{StData.roles}}
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-warning btn-sm">Update</button>
+					<button type="button" class="btn btn-danger btn-sm">Delete</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav flex-column">
+
+						<li class=" active nav-item " >
+							<a href="#">
+							<fa-icon  [icon]="Icons[0]"></fa-icon>
+
+							 | Overview </a>
+						</li>
+                        <br>
+						<li class=" nav-item " >
+							<a href="#">
+							<fa-icon  [icon]="Icons[5]"></fa-icon>
+							 | Account Settings </a>
+						</li>
+                        <br>
+						<li class="nav-item " >
+							<a href="#" target="_blank">
+							<i class="glyphicon glyphicon-ok"></i>
+							Tasks </a>
+						</li>
+                        <br>
+						<li class=" nav-item " >
+							<a href="#">
+							<i class="glyphicon glyphicon-flag"></i>
+							Help </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+
+                            <ul class="list-group">
+                    <li class="list-group-item">
+                              <fa-icon  [icon]="Icons[1]"></fa-icon> |
+                                        {{StData.username}}
+                                        </li>
+                              <li class="list-group-item">
+                              <fa-icon  [icon]="Icons[4]"></fa-icon> |
+                                        {{StData.id}}
+                                        </li>
+                              <li class="list-group-item"><fa-icon  [icon]="Icons[2]"></fa-icon> | {{StData.email}}</li>
+                              <li class="list-group-item"><fa-icon  [icon]="Icons[0]"></fa-icon> | {{Departments[StData.department]}} </li>
+                            </ul>
             </div>
-            <form id="objects-details-form" style="margin-right: 150px;">
-                <div class="container">
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">ID</th>
-                                    <td>{{StData.id}}</td>
-            
-                                </tr>
-                                <tr>
-                                    <th scope="row">username</th>
-                                    <td>{{StData.username}}</td>
-            
-                                </tr>
-                                <tr>
-                                  <th scope="row">Email</th>
-                                  <td>{{StData.email}}</td>
-          
-                              </tr>
-                                <tr>
-                                    <th scope="row">picPath</th>
-                                    <td>{{StData.picPath}}</td>
-            
-                                </tr>
-                                <tr>
-                                    <th scope="row">Department</th>
-                                    <td>{{StData.department}}</td>
-            
-                                </tr>
-                                <tr>
-                                    <th scope="row">studyYear</th>
-                                    <td>{{StData.studyYear}}</td>
-            
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                  
-            
-            
-            </form>
-            
-          </section>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
     </div>
 
 

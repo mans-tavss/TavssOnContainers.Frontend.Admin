@@ -1,3 +1,4 @@
+import { ICONSService } from './../services/icons.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RegStudentService } from './StudentService/reg-student.service';
@@ -16,18 +17,19 @@ export class StudentComponent implements OnInit {
   id ;
   APIUrl : string;
   searchString : String;
-
+  StudentIcons = [];
   alluser;
 
   title = 'StudentApp'
 
   constructor(
     private http : HttpClient,
-    private routes : Router , 
-    public Stservice : RegStudentService , 
+    private routes : Router ,
+    public Stservice : RegStudentService ,
     private route : ActivatedRoute,
-    private Title : Title  ) 
-    {   
+    private Title : Title ,
+    private  Icons : ICONSService )
+    {
       this.id = this.route.snapshot.paramMap.get('id');
     }
 
@@ -54,13 +56,14 @@ export class StudentComponent implements OnInit {
 
   DetailsStudent(id : string)
   {
-    this.routes.navigate(['/Controlpanel'  ,{ outlets: { "control": ["StudentDetails", id] } } ]);
+    this.routes.navigate(['/Controlpanel'  , { outlets: {'control': ['StudentDetails', id] } } ]);
   }
 
   UpdateStuednt(id)
   {
-    this.routes.navigate(['/StudentUpdate/', id]);
-  }//we remove it and replace it in component by routerlink with student.id
+    this.routes.navigate(['/Controlpanel'  ,{ outlets: { "control": ["StudentUpdate", id] } } ]);
+  }
+  //we remove it and replace it in component by routerlink with student.id
 
   Course()
   {
@@ -75,16 +78,16 @@ export class StudentComponent implements OnInit {
   {
     this.routes.navigate(['/Communty']);
   }
-  loadStudent () 
+  loadStudent ()
   {
     return this.Stservice.getDataList().subscribe(
       studentData => this.alluser = studentData
     )
   }
-  
+
   DeleteStuden(student)
   {
-    if ( confirm ( "Are you sure you delete this student?" ) ) 
+    if ( confirm ( "Are you sure you delete this student?" ) )
     {
       this.http.delete('https://localhost:7001/api/v1/DeleteUser' + '/' + student.id)
           .subscribe( res => {
@@ -97,7 +100,8 @@ export class StudentComponent implements OnInit {
   }
 
    ngOnInit() {
-     this.Title.setTitle(this.title)
+     this.Title.setTitle(this.title);
+     this.StudentIcons =  this.Icons.StudentIcons;
      this.APIUrl = localStorage.getItem('IdentityAPI');
      this.loadStudent();
   }

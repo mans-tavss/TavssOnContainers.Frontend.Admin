@@ -1,10 +1,6 @@
-#wrapper{width: 80%;}
-
-
-
-
-
-
+#wrapper {
+    width: 80%;
+}
 
 .vertical-header {
     position: fixed;
@@ -22,7 +18,7 @@
 .vertical-header-wrapper {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 1)  no-repeat scroll center center;
+    background: rgba(0, 0, 0, 1) no-repeat scroll center center;
     z-index: 10;
     overflow-x: hidden;
     min-width: 260px;
@@ -147,41 +143,36 @@
 
 .menu-search {
     padding: 0 15px;
-    
 }
 
 .menu-search .form-group {
     position: absolute;
     margin-left: 70%;
     padding: 0;
-    
-    
 }
 
 .menu-search .btn {
-    background-color:aqua;
+    background-color: green;
     position: absolute;
     border: 0;
     top: -1px;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: 12px;
     right: 0;
 }
 
 .menu-search .form-control:focus .btn {
-    color:aqua;
+    color: aqua;
 }
 
 .menu-search .form-control {
     border-radius: 20;
-    background-color:mintcream;
+    background-color: mintcream;
     height: 40px;
     border: 20;
     color: black;
     font-size: 15px;
     box-shadow: 10;
-    
     border: 1px solid black;
 }
 
@@ -195,7 +186,7 @@
 }
 
 .menu-search .form-control::-webkit-input-placeholder {
-    color:  black;
+    color: black;
 }
 
 .menu-social ul {
@@ -214,24 +205,31 @@
     border: 1px dotted rgba(255, 255, 255, 0.2);
 }
 
+
 /*!
      * Yamm!3 - Yet another megamenu for Bootstrap 3
      * http://geedmo.github.com/yamm3
-     * 
+     *
      * @geedmo - Licensed under the MIT license
      */
 
+.table {
+    width: 90%;
+    margin: 30px auto;
+}
 
-     .table
-     {
-         width : 90%;
-         margin: 30px auto;
-     }
-     
-     .parent{overflow: hidden;}
-     .vertical-header , #wrapper{float: right;}
-     .vertical-header{width: 20%;}
-     
+.parent {
+    overflow: hidden;
+}
+
+.vertical-header,
+#wrapper {
+    float: right;
+}
+
+.vertical-header {
+    width: 20%;
+}
 
 .yamm .nav,
 .yamm .collapse,
@@ -401,6 +399,7 @@
     background-color: #ffffff !important;
 }
 
+
 /*********************
 MOBILE MENU
 *********************/
@@ -437,6 +436,7 @@ MOBILE MENU
 .navbar-brand {
     padding: 12px 20px;
 }
+
 
 /************************************
 SLIDER
@@ -501,6 +501,7 @@ SLIDER
     text-decoration: none;
 }
 
+
 /*********************
 SECTIONS
 *********************/
@@ -560,6 +561,3 @@ SECTIONS
 .section.lb {
     background-color: #f7f6f6
 }
-
-
-
